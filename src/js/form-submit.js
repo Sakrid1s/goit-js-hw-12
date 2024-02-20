@@ -1,6 +1,7 @@
 import { refs } from './refs';
 import { getPixabayImages } from './render-functions';
 import { createLoader } from './css-loader';
+import { hideShowMoreBtn, showMoreBtn } from './show-more-btn';
 export function onFormSubmit(event) {
   event.preventDefault();
   createLoader();
