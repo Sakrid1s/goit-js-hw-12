@@ -14,9 +14,12 @@ export function getPixabayImages(inputValue) {
     });
   }
   const BASE_URL = 'https://pixabay.com/api/';
-  const PIXABAY_KEY = '?key=42339224-5f1cb7b0c825234adabadbe9d';
+  const PIXAPAY_KEY = '?key=42339224-5f1cb7b0c825234adabadbe9d';
   const PARAMS = `&q=${inputValue}&image_type=photo&orientation=horizontal&safesearch=true`;
   const url = BASE_URL + PIXABAY_KEY + PARAMS;
+  const params = {
+    apiKey: PIXAPAY_KEY,
+  };
   fetch(url)
     .then(response => {
       if (!response.ok) {
