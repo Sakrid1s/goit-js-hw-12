@@ -1,9 +1,11 @@
 import { refs } from './refs';
 
-export function showMoreBtn() {
+export function hideshowMoreBtn() {
   refs.showMoreBtn.classList.add('hidden');
 }
 
-export function hideShowMoreBtn() {
+export function showMoreBtn() {
   refs.showMoreBtn.classList.remove('hidden');
 }
+
+export function onShowMoreBtnClick() {}
