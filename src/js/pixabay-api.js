@@ -9,6 +9,7 @@ export async function getPixabayImages(inputValue) {
     imageType: 'photo',
     orientation: 'horizontal',
     safeSearch: 'true',
+    per_page: 15,
   };
   const res = await axios.get(url, { params });
   return res.data;
