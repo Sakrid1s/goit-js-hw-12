@@ -6,12 +6,14 @@ import { getPixabayImages } from './pixabay-api';
 import { renderMarkup } from './render-functions';
 import { createLoader } from './css-loader';
 import { removeLoader } from './css-loader';
-import { showMoreBtn } from './show-more-btn';
+import { loadMoreBtn } from './load-more-btn';
+
+let userInputValue;
 export async function onFormSubmit(event) {
   event.preventDefault();
   createLoader();
   refs.gallery.innerHTML = '';
-  const userInputValue = refs.formInput.value.trim();
+  userInputValue = refs.formInput.value.trim();
   if (!userInputValue) {
     removeLoader();
     return iziToast.error({
@@ -21,6 +23,8 @@ export async function onFormSubmit(event) {
   }
   const data = await getPixabayImages(userInputValue);
   renderMarkup(data.hits);
-  showMoreBtn();
+  // loadMoreBtn();
   refs.form.reset();
 }
+
+export async function onLoadMoreBtnClick() {}

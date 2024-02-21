@@ -1,6 +1,5 @@
 import { refs } from './js/refs';
-import { onFormSubmit } from './js/form-submit';
-import { onShowMoreBtnClick } from './js/show-more-btn';
+import { onFormSubmit, onLoadMoreBtnClick } from './js/form-submit';
 
 refs.form.addEventListener('submit', onFormSubmit);
-refs.showMoreBtn.addEventListener('click', onShowMoreBtnClick);
+refs.showMoreBtn.addEventListener('click', onLoadMoreBtnClick);
