@@ -4,6 +4,7 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
 import { refs } from './refs';
+import { modalOptions } from './modal-options';
 import { removeLoader } from './css-loader';
 
 function photoTemplate(data) {
@@ -38,9 +39,5 @@ export function renderMarkup(hits) {
   const markup = photosTemplates(hits);
   refs.gallery.insertAdjacentHTML('beforeend', markup);
   const gallery = new SimpleLightbox('.gallery a', modalOptions);
-  const modalOptions = {
-    captionsData: 'alt',
-    captionDelay: 250,
-  };
   gallery.refresh();
 }

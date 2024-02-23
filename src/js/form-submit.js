@@ -9,6 +9,7 @@ import { removeLoader } from './css-loader';
 import { loadMoreBtn } from './load-more-btn';
 
 let userInputValue;
+let page;
 export async function onFormSubmit(event) {
   event.preventDefault();
   createLoader();
@@ -21,10 +22,15 @@ export async function onFormSubmit(event) {
       position: 'topRight',
     });
   }
-  const data = await getPixabayImages(userInputValue);
+  page = 1;
+  const data = await getPixabayImages(userInputValue, page);
   renderMarkup(data.hits);
-  // loadMoreBtn();
   refs.form.reset();
 }
 
-export async function onLoadMoreBtnClick() {}
+export async function onLoadMoreBtnClick() {
+  createLoader();
+  page += 1;
+  const data = await getPixabayImages(userInputValue, page);
+  renderMarkup(data.hits);
+}
