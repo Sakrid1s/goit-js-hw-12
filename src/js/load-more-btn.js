@@ -1,9 +1,9 @@
 import { refs } from './refs';
 
-export function hideloadMoreBtn() {
+export function hidenloadMoreBtn() {
   refs.loadMoreBtn.classList.add('hidden');
 }
 
-export function loadMoreBtn() {
+export function visibleLoadMoreBtn() {
   refs.loadMoreBtn.classList.remove('hidden');
 }
