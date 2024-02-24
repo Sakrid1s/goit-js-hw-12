@@ -17,7 +17,7 @@ export async function onFormSubmit(event) {
   if (!userInputValue) {
     removeLoader();
     hidenloadMoreBtn();
-    return showError('Form field must be filled in');
+    return showError('Form field must be filled in.');
   }
 
   try {
@@ -25,7 +25,7 @@ export async function onFormSubmit(event) {
     if (data.totalHits === 0) {
       removeLoader();
       hidenloadMoreBtn();
-      return showInfo('Nothing found');
+      return showInfo('Nothing found.');
     }
     totalPhotos = Math.ceil(data.totalHits / 15);
     renderMarkup(data.hits);
@@ -57,7 +57,7 @@ export async function onLoadMoreBtnClick() {
 function checkLoadBtnVisibility() {
   if (page >= totalPhotos) {
     hidenloadMoreBtn();
-    showInfo('We are sorry, but you have reached the end of search results');
+    showInfo('We are sorry, but you have reached the end of search results.');
   } else {
     visibleLoadMoreBtn();
   }
