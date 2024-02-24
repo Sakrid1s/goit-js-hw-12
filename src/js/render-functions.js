@@ -1,11 +1,8 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
-import iziToast from 'izitoast';
-import 'izitoast/dist/css/iziToast.min.css';
 
 import { refs } from './refs';
 import { modalOptions } from './modal-options';
-import { removeLoader } from './css-loader';
 
 function photoTemplate(data) {
   const {
