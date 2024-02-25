@@ -32,9 +32,13 @@ function photosTemplates(data) {
   return data.map(photoTemplate).join('');
 }
 
+let gallery;
 export function renderMarkup(hits) {
+  if (gallery) {
+    gallery.destroy();
+  }
   const markup = photosTemplates(hits);
   refs.gallery.insertAdjacentHTML('beforeend', markup);
-  const gallery = new SimpleLightbox('.gallery a', modalOptions);
+  gallery = new SimpleLightbox('.gallery a', modalOptions);
   gallery.refresh();
 }
